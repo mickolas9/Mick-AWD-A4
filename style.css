@@ -1,0 +1,506 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Apple Garamond', serif;
+    background-color: #fff;
+
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('../fonts/AppleGaramond.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    opacity: 0;
+}
+
+.text-animation {
+    color: #000000;
+    opacity: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.text-animation span {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 50px;
+    font-weight: 600;
+    opacity: 0;
+    text-transform: uppercase;
+    animation: fade 400ms ease-in-out forwards;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fade {
+    0% {
+        top: 10px;
+        left: 10px;
+        filter: blur(15px);
+        opacity: 0;
+    }
+
+    50% {
+        filter: blur(10px);
+        opacity: 0.9;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+#crazy {
+    font-weight: bold;
+    transition: all 0.5s ease;
+    margin: 0 4px;
+}
+
+.text-animation span {
+    display: inline-block;
+    /* Allows us to animate individual letters */
+    opacity: 0;
+    /* Start with letters invisible */
+    transform: translate(0px, 0px);
+    /* Initial position */
+    animation: enter 0.5s ease forwards, scatter 5s infinite ease-in-out;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scatter {
+
+    0%,
+    100% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(-5px, 5px);
+    }
+
+    50% {
+        transform: translate(5px, -5px);
+    }
+
+    75% {
+        transform: translate(-5px, -5px);
+    }
+}
+
+#misfits {
+    position: relative;
+    /* Ensures absolute children are positioned relative to this */
+    height: 100vh;
+    /* Adjust height as needed for your design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-animation-misfits {
+    display: block;
+    position: inline-block;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.text-animation-misfits span {
+    display: inline-block;
+    transform: translate(0px, 0px);
+    /* Default state */
+    opacity: 1;
+    /* Start visible to avoid flash of unstyled content */
+}
+
+
+@keyframes enter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scatter {
+
+    0%,
+    100% {
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        transform: translate(-10px, 10px);
+    }
+
+    50% {
+        transform: translate(10px, -10px);
+    }
+
+    75% {
+        transform: translate(-10px, -10px);
+    }
+}
+
+/* .rebels-section {
+    background-color: red;
+} */
+
+.rebels {
+    display: inline-block;
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both infinite;
+    transform-origin: center;
+    /* Ensures the shake is centered */
+}
+
+
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+.troublemakers>span {
+    display: inline-block;
+    animation: glow 5s ease-in-out infinite, bounce 5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        color: #FFF;
+        text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
+    }
+
+    10%,
+    90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.troublemakers>span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.troublemakers>span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.troublemakers>span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.troublemakers>span:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.troublemakers>span:nth-child(6) {
+    animation-delay: 1.25s;
+}
+
+.troublemakers>span:nth-child(7) {
+    animation-delay: 1.5s;
+}
+
+.troublemakers>span:nth-child(8) {
+    animation-delay: 1.75s;
+}
+
+.troublemakers>span:nth-child(9) {
+    animation-delay: 2s;
+}
+
+.troublemakers>span:nth-child(10) {
+    animation-delay: 2.25s;
+}
+
+.troublemakers>span:nth-child(11) {
+    animation-delay: 2.75s;
+}
+
+.troublemakers>span:nth-child(12) {
+    animation-delay: 3s;
+}
+
+.troublemakers>span:nth-child(13) {
+    animation-delay: 3.25s;
+}
+
+.troublemakers>span:nth-child(14) {
+    animation-delay: 3.5s;
+}
+
+.troublemakers>span:nth-child(15) {
+    animation-delay: 3.75s;
+}
+
+.troublemakers>span:nth-child(16) {
+    animation-delay: 4s;
+}
+
+.troublemakers>span:nth-child(17) {
+    animation-delay: 4.25s;
+}
+
+
+
+.text-animation-pegs span {
+    display: inline-flex;
+    /* Use inline-flex to center content */
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    /* Fixed width */
+    height: 60px;
+    /* Equal height to ensure a circle */
+    padding: 15px;
+    /* Adjust padding as needed, ensuring it doesn’t affect the width/height */
+    margin: 2px;
+    /* Spacing between letters, consider reducing or removing to hide spaces */
+    background-color: #000;
+    /* Light background to visualize the transformation */
+    color: white;
+    border-radius: 50%;
+    /* Start with a circle */
+    font-size: 40px;
+    /* Adjust based on your design */
+    box-sizing: border-box;
+    /* Ensures padding doesn't add to the width/height */
+
+}
+
+#differentView {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text-container {
+    font-size: 3rem;
+    /* Adjust as necessary */
+    color: #FFFFFF;
+    /* Light text color for contrast */
+    position: relative;
+    z-index: 1;
+}
+
+.scrolling-circle {
+    position: absolute;
+    width: 150px;
+    /* Circle size */
+    height: 150px;
+    border-radius: 50%;
+    background-color: #000;
+    /* Dark circle color */
+    mix-blend-mode: difference;
+    z-index: 2;
+    top: 50%;
+    /* Center vertically */
+    left: 0;
+    /* Start from the left */
+    transform: translateY(-50%);
+    /* Ensure it's centered on its path vertically */
+}
+
+#noRules {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.rules-content {
+    font-size: 3rem;
+    transition: transform 2s ease-in-out;
+}
+
+.rules-content span {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    /* Smooth transition for movement */
+}
+
+#statusQuo {
+    /* Position and styles for your text section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.status-quo-content {
+    font-family: "sans-serif";
+    /* Fallback font */
+}
+
+.variable-font {
+    font-family: "magari-variable", sans-serif;
+    font-variation-settings: "wght" 100;
+    /* Initial weight */
+    transition: font-variation-settings 2s ease;
+    /* Smooth transition for font weight */
+}
+
+.interactive {
+    display: inline-block;
+}
+
+.quote-mark {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+
+
+
+#disagree,
+#glorify,
+#vilify,
+#quote {
+    transition: text-shadow 1s ease;
+}
+
+#cannot-ignore {
+    display: inline-block;
+    transform-origin: top;
+    font-size: 2rem;
+    position: relative;
+}
+
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    /* Red underline */
+    transform: scaleX(0);
+    /* Initially hidden */
+    transform-origin: left;
+}
+
+#change-things span {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#race-forward {
+    overflow-x: hidden;
+    /* Prevents horizontal scrollbar */
+    white-space: nowrap;
+    /* Keeps the text in one line */
+    color: #000;
+    /* Initial text color */
+    opacity: 0;
+    /* Start invisible */
+}
+
+#perception-shift {
+    display: block;
+    /* Adjust layout as needed */
+}
+
+.crazy-ones,
+.genius {
+    display: inline-block;
+    opacity: 0.5;
+    /* Start semi-transparent */
+    filter: blur(4px);
+    /* Start with a blur */
+    transition: all 0.3s ease;
+    /* Smooth transition for changes */
+    font-weight: normal;
+    /* Initial font weight */
+}
+
+.genius {
+    opacity: 10%;
+    /* Genius starts fully invisible */
+    font-weight: bold;
+    /* Bold font for emphasis */
+}
